@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { data } from '@/data/data';
 
 export default function NotFound() {
   return (
@@ -8,21 +9,21 @@ export default function NotFound() {
         {/* 404 Number Section */}
         <div className="relative">
           <h1 className="text-[120px] sm:text-[160px] md:text-[200px] font-black leading-none tracking-tighter select-none">
-            <span className="text-[#0f2044] drop-shadow-md">4</span>
-            <span className="text-[#0070f3] drop-shadow-md">0</span>
-            <span className="text-[#0f2044] drop-shadow-md">4</span>
+            <span className="text-[#0f2044] drop-shadow-md">{data.content.notFound.numberDigits[0]}</span>
+            <span className="text-[#0070f3] drop-shadow-md">{data.content.notFound.numberDigits[1]}</span>
+            <span className="text-[#0f2044] drop-shadow-md">{data.content.notFound.numberDigits[2]}</span>
           </h1>
         </div>
 
         {/* Text Content */}
         <div className="space-y-3">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#0f2044]">
-            Page Not <span className="text-[#0070f3]">Found</span>
+            {data.content.notFound.titleFirst} <span className="text-[#0070f3]">{data.content.notFound.titleHighlight}</span>
           </h2>
           <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-sm mx-auto">
-            The page you're looking for doesn't exist or may have been moved.
+            {data.copy.notFound.description[0]}
             <br className="hidden sm:block" />
-            Let's get you back on track.
+            {data.copy.notFound.description[1]}
           </p>
         </div>
 
@@ -42,16 +43,16 @@ export default function NotFound() {
               <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
               <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
             </svg>
-            Back to Home
+            {data.copy.notFound.backHome}
           </Link>
 
           <Link
             href="/services"
             className="group inline-flex items-center gap-2 text-sm font-semibold text-[#0070f3] hover:text-blue-700 transition-colors"
           >
-            Or explore our services
+            {data.copy.notFound.exploreServices}
             <span className="group-hover:translate-x-1 transition-transform duration-200">
-              &rarr;
+              {data.copy.notFound.arrow}
             </span>
           </Link>
         </div>

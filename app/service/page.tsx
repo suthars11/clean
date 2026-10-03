@@ -1,7 +1,7 @@
 import React from 'react'
-import ServiceGoal from './ServiceGoal'
-import GetInTouch from './GetInTouch'
-import Hero from '../components/Hero'
+import ServiceGoal from '@/components/service/ServiceGoal'
+import GetInTouch from '@/components/service/GetInTouch'
+import Hero from '@/components/ui/Hero'
 
 const page = () => {
   return (

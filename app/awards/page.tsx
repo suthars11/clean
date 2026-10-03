@@ -1,6 +1,6 @@
 import React from 'react'
-import Hero from "../components/Hero";
-import Achievements from './Achievements';
+import Hero from "@/components/ui/Hero";
+import Achievements from '@/components/awards/Achievements';
 const page = () => {
   return (
     <div>

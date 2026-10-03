@@ -1,7 +1,7 @@
 
 
-import Hero from '../components/Hero'
-import LatestBlog from './LatestBlog'
+import Hero from '@/components/ui/Hero'
+import LatestBlog from '@/components/blog/LatestBlog'
 
 const page = () => {
   return (

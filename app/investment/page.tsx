@@ -1,8 +1,8 @@
 import React from 'react'
 
-import OurProcess from './OurProcess'
-import ProcessWork from './ProcessWork'
-import Hero from '../components/Hero'
+import OurProcess from '@/components/investment/OurProcess'
+import ProcessWork from '@/components/investment/ProcessWork'
+import Hero from '@/components/ui/Hero'
 
 const page = () => {
   return (

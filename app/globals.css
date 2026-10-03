@@ -1,2 +1,75 @@
 @import "tailwindcss";
 
+
+/* Equal vertical rhythm: every page section gets the same top/bottom spacing,
+   so the gap between two stacked components is always identical. Full-bleed
+   hero/banner sections opt out with data-flush. */
+:root {
+  --section-y: 2rem;
+  --page-gutter: 1rem;
+}
+@media (min-width: 640px) {
+  :root {
+    --section-y: 2.5rem;
+    --page-gutter: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --section-y: 3rem;
+    --page-gutter: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  :root {
+    --page-gutter: 3rem;
+  }
+}
+.page-gutter {
+  padding-inline: var(--page-gutter);
+}
+.page-inset {
+  margin-inline: var(--page-gutter);
+}
+.team-slider {
+  scrollbar-width: none;
+}
+.team-slider::-webkit-scrollbar {
+  display: none;
+}
+.team-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+@media (min-width: 640px) {
+  .team-slide {
+    flex-basis: calc((100% - 1.25rem) / 2 - 1px);
+  }
+}
+@media (min-width: 1024px) {
+  .team-slide {
+    flex-basis: calc((100% - 3.75rem) / 4 - 1px);
+  }
+}
+main > div > section:not([data-flush]) {
+  padding-block: var(--section-y);
+}
+
+/* Photos zoom in on hover and ease back out on leave. */
+main div:has(> img.object-cover) {
+  overflow: hidden;
+}
+main div > img.object-cover {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  main section:not([data-hero]) div:hover > img.object-cover {
+    transform: scale(1.07);
+  }
+}
+
+header nav a:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}

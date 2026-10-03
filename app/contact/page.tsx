@@ -1,7 +1,7 @@
 import React from 'react'
-import Hero from '../components/Hero'
-import ContactForm from './ContactForm'
-import OurLocation from './OurLocation'
+import Hero from '@/components/ui/Hero'
+import ContactForm from '@/components/contact/ContactForm'
+import OurLocation from '@/components/contact/OurLocation'
 
 const page = () => {
   return (
